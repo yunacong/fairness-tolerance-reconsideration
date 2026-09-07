@@ -1,0 +1,11 @@
+:root { color-scheme: light; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: radial-gradient(circle at top right, rgba(18, 94, 114, .08), transparent 35%), #f4f7f7; }
+:focus-visible { outline: 3px solid #f0a202 !important; outline-offset: 3px; }
+.skip-link { position: fixed; left: 12px; top: -80px; z-index: 2000; background: #fff; color: #0a3d4a; padding: 12px 18px; border: 3px solid #f0a202; border-radius: 8px; }
+.skip-link:focus { top: 12px; }
+.tutorial-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 24px; }
+table { border-collapse: collapse; }
+th, td { padding: 12px; border-bottom: 1px solid #d9e2e5; text-align: left; }
+@media (max-width: 720px) { .tutorial-grid { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; } }
