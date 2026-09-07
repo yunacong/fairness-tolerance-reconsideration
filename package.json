@@ -1,0 +1,26 @@
+{
+  "name": "lay-stakeholder-fairness-tradeoff-study",
+  "version": "1.2.0",
+  "private": true,
+  "description": "Participant study system for fairness-tolerance decisions before and after fairness-accuracy trade-off information.",
+  "type": "module",
+  "workspaces": ["apps/*"],
+  "engines": {"node": ">=20.19"},
+  "scripts": {
+    "data:generate": "python3 research/generate_tradeoffs.py",
+    "dev": "concurrently -k -n api,web -c blue,green \"npm run dev -w @fairness-study/server\" \"npm run dev -w @fairness-study/web\"",
+    "build": "npm run build -w @fairness-study/web && npm run build -w @fairness-study/server",
+    "start": "npm run start -w @fairness-study/server",
+    "test:research": "python3 -m unittest discover -s research/tests -v",
+    "test:server": "npm run test -w @fairness-study/server",
+    "test:web": "npm run test -w @fairness-study/web",
+    "test:e2e": "playwright test",
+    "test": "npm run data:generate && npm run test:research && npm run test:server && npm run test:web",
+    "check": "npm run test && npm run build"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.2",
+    "concurrently": "^9.2.0",
+    "typescript": "^5.8.3"
+  }
+}
