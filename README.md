@@ -1,17 +1,7 @@
-# Fairness tolerance reconsideration study
+# Fairness Tolerance Reconsideration
 
-Code for *Investigating How Lay Stakeholders Reconsider Fairness Tolerance Thresholds after Viewing Fairness–Accuracy Trade-offs*.
+Study system for fairness tolerance decisions before and after viewing fairness–accuracy trade-offs.
 
-The study collects PRE/POST fairness tolerance decisions, confidence, comprehension responses, SUS and Raw NASA-TLX. The offline pipeline generates fairness–accuracy configurations from 200 fixed predictions; it does not train a model.
+Run: `npm ci`, `npm run data:generate`, then `npm run dev` (Node.js 20.19+ and Python 3).
 
-
-## Structure
-
-- `apps/web/`: participant interface and questionnaires.
-- `apps/server/`: session handling, SQLite storage and research exports.
-- `research/`: frozen configuration generation, protocol, generated assets and metric tests.
-- `src/data/results.json`: fixed 200-record prediction asset used by the pipeline.
-- `analysis/`: final study analysis and Python dependencies.
-- `docs/data-schema.md`: database field definitions.
-
-
+GitHub: https://github.com/yunacong/fairness-tolerance-reconsideration
